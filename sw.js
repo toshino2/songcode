@@ -1,4 +1,4 @@
-const CACHE='songcode-player-v5',VERSION='v=20260904-3',ASSETS=['./','./index.html','./style.css','./play/','./play/index.html','./play/app.js'].map(path=>`${path}?${VERSION}`);
+const CACHE='songcode-player-v6',VERSION='v=20260904-4',ASSETS=['./','./index.html','./style.css','./play/','./play/index.html','./play/app.js'].map(path=>`${path}?${VERSION}`);
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{if(e.request.method==='GET')e.respondWith(caches.match(e.request,{ignoreSearch:true}).then(hit=>hit||fetch(e.request))) });
