@@ -1,1 +1,43 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SongCode Player</title><link rel="stylesheet" href="../style.css"></head><body><main class="player"><section class="card"><div class="eyebrow">SONGCODE BIRTHDAY CARD</div><h1 id="title" class="birthday">歌を準備しています</h1><div id="meta" class="meta"></div><div class="lyrics"><span>Happy birthday to you,</span><span>Happy birthday to you,</span><span>Happy birthday, dear <b id="name">あなた</b>,</span><span>Happy birthday to you.</span></div><button id="play" class="button" disabled>▶ 名前入りの歌を再生</button><div id="status" class="status" aria-live="polite"></div><div class="privacy">曲情報はこのURL内に保存され、ブラウザ内だけで再生されます。</div></section></main><script src="app.js"></script><script>if('serviceWorker'in navigator)navigator.serviceWorker.register('../sw.js')</script></body></html>
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SongCode Player</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <main class="player">
+    <section class="card">
+      <div class="eyebrow">SONGCODE BIRTHDAY CARD</div>
+      <h1 id="title" class="birthday">歌を準備しています</h1>
+      <div id="meta" class="meta"></div>
+      <div id="birdStage" class="bird-stage" aria-hidden="true">
+        <svg class="bird" viewBox="0 0 180 120">
+          <path class="bird-tail" d="M44 72 13 88l35 3z"/>
+          <ellipse class="bird-body" cx="79" cy="72" rx="42" ry="31"/>
+          <circle class="bird-head" cx="116" cy="48" r="25"/>
+          <path class="bird-wing" d="M75 59c-30 2-35 31-8 38 21 5 35-18 30-31-5-7-13-9-22-7z"/>
+          <circle class="bird-eye" cx="124" cy="42" r="3.5"/>
+          <path class="bird-beak bird-beak-top" d="m139 48 26 7-27 4z"/>
+          <path class="bird-beak bird-beak-bottom" d="m138 59 24 2-22 8z"/>
+          <path class="bird-leg" d="M70 98v12m-9 0h18M91 99v11m-8 0h17"/>
+        </svg>
+        <span class="music-note note-one">♪</span>
+        <span class="music-note note-two">♫</span>
+      </div>
+      <div id="lyrics" class="lyrics" aria-label="歌詞">
+        <div class="lyric-line"><span data-note="0">はっ</span><span data-note="1">ぴー</span><span data-note="2">ばー</span><span data-note="3">すでー</span><span data-note="4">とぅー</span><span data-note="5">ゆー</span></div>
+        <div class="lyric-line"><span data-note="6">はっ</span><span data-note="7">ぴー</span><span data-note="8">ばー</span><span data-note="9">すでー</span><span data-note="10">とぅー</span><span data-note="11">ゆー</span></div>
+        <div class="lyric-line"><span data-note="12">はっ</span><span data-note="13">ぴー</span><span data-note="14">ばー</span><span data-note="15">すでー</span><span data-note="16">でぃあ</span><b id="name"><span data-note="17">は</span><span data-note="18">る</span></b></div>
+        <div class="lyric-line"><span data-note="19">はっ</span><span data-note="20">ぴー</span><span data-note="21">ばー</span><span data-note="22">すでー</span><span data-note="23">とぅー</span><span data-note="24">ゆー</span></div>
+      </div>
+      <button id="play" class="button" disabled>▶ 名前入りの歌を再生</button>
+      <div id="status" class="status" aria-live="polite"></div>
+      <div class="privacy">曲情報はこのURL内に保存され、ブラウザ内だけで再生されます。</div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+  <script>if('serviceWorker'in navigator)navigator.serviceWorker.register('../sw.js')</script>
+</body>
+</html>
