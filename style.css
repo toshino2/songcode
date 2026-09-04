@@ -1,1 +1,44 @@
-*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;color:#17324d;background:#fff9ed}main{max-width:820px;margin:auto;padding:clamp(32px,8vw,88px) 24px}.home,.card{background:#fff;border-radius:28px;box-shadow:0 18px 60px #17324d12}.home{margin-top:8vh;padding:clamp(30px,7vw,64px)}.eyebrow{color:#f48b78;font-size:13px;letter-spacing:.12em}h1{font-size:clamp(34px,7vw,62px);line-height:1.28;margin:18px 0}p{font-size:17px;line-height:1.9;color:#5d7080}.notice{margin-top:32px;padding:20px;border-radius:16px;background:#dceef7;line-height:1.7}.player{max-width:660px}.card{padding:clamp(26px,7vw,56px);text-align:center}.birthday{color:#f48b78;font-size:clamp(26px,6vw,42px);margin:18px 0 6px}.meta{color:#71818e;margin-bottom:28px}.lyrics{display:grid;gap:8px;margin:28px 0;color:#526677}.button{appearance:none;border:0;border-radius:999px;background:#17324d;color:#fff;padding:17px 28px;font-size:17px;font-weight:700;width:min(100%,360px);cursor:pointer}.button:disabled{opacity:.5}.status{min-height:24px;margin-top:18px;color:#526677}.error{color:#b64040}.privacy{margin-top:26px;font-size:12px;color:#84919c}@media(max-width:600px){.home{margin:16px}.player{padding:20px 14px}.card{border-radius:22px}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;color:#17324d;background:#fff9ed}
+main{max-width:820px;margin:auto;padding:clamp(32px,8vw,88px) 24px}
+.home,.card{background:#fff;border-radius:28px;box-shadow:0 18px 60px #17324d12}
+.home{margin-top:8vh;padding:clamp(30px,7vw,64px)}
+.eyebrow{color:#f48b78;font-size:13px;letter-spacing:.12em}
+h1{font-size:clamp(34px,7vw,62px);line-height:1.28;margin:18px 0}
+p{font-size:17px;line-height:1.9;color:#5d7080}
+.notice{margin-top:32px;padding:20px;border-radius:16px;background:#dceef7;line-height:1.7}
+.player{max-width:660px}
+.card{padding:clamp(26px,7vw,56px);text-align:center;overflow:hidden}
+.birthday{color:#f48b78;font-size:clamp(26px,6vw,42px);margin:18px 0 6px}
+.meta{color:#71818e;margin-bottom:12px}
+.bird-stage{position:relative;width:180px;height:116px;margin:4px auto 2px;color:#17324d}
+.bird{width:180px;height:120px;overflow:visible;transform-origin:50% 85%}
+.bird-body,.bird-head,.bird-tail,.bird-wing,.bird-beak{fill:currentColor}
+.bird-eye{fill:#fff}
+.bird-leg{fill:none;stroke:currentColor;stroke-width:4;stroke-linecap:round}
+.bird-wing{transform-box:fill-box;transform-origin:85% 45%}
+.bird-beak-bottom{transform-box:fill-box;transform-origin:0 0}
+.music-note{position:absolute;right:4px;top:28px;color:#f48b78;font-size:26px;font-weight:700;opacity:0}
+.note-two{right:-16px;top:8px;font-size:20px}
+.bird-stage.is-singing .bird{animation:bird-bob .5s ease-in-out infinite alternate}
+.bird-stage.is-singing .bird-wing{animation:wing-flap .34s ease-in-out infinite alternate}
+.bird-stage.is-singing .bird-beak-bottom{animation:beak-sing .22s ease-in-out infinite alternate}
+.bird-stage.is-singing .music-note{animation:note-float 1.25s ease-out infinite}
+.bird-stage.is-singing .note-two{animation-delay:.55s}
+.lyrics{display:grid;gap:10px;margin:10px 0 28px;color:#526677}
+.lyric-line{display:flex;justify-content:center;flex-wrap:wrap;gap:3px;font-size:clamp(16px,4vw,20px);line-height:1.75}
+.lyric-line>span,.lyric-line b span{display:inline-block;padding:0 3px;border-radius:7px;transition:color .12s,background .12s,transform .12s}
+.lyric-line b{display:inline-flex}
+.lyric-line .active{color:#fff;background:#f48b78;transform:translateY(-2px) scale(1.08);box-shadow:0 5px 14px #f48b7840}
+.lyric-line .sung{color:#d36f60}
+.button{appearance:none;border:0;border-radius:999px;background:#17324d;color:#fff;padding:17px 28px;font-size:17px;font-weight:700;width:min(100%,360px);cursor:pointer}
+.button:disabled{opacity:.5}
+.status{min-height:24px;margin-top:18px;color:#526677}
+.error{color:#b64040}
+.privacy{margin-top:26px;font-size:12px;color:#84919c}
+@keyframes bird-bob{to{transform:translateY(-5px) rotate(-1deg)}}
+@keyframes wing-flap{to{transform:rotate(-18deg) translateY(-4px)}}
+@keyframes beak-sing{to{transform:rotate(13deg)}}
+@keyframes note-float{0%{opacity:0;transform:translate(0,8px) scale(.7)}25%{opacity:1}100%{opacity:0;transform:translate(18px,-42px) scale(1.15)}}
+@media(max-width:600px){.home{margin:16px}.player{padding:20px 14px}.card{border-radius:22px}.bird-stage{transform:scale(.88);margin-top:-4px;margin-bottom:-5px}}
+@media(prefers-reduced-motion:reduce){.bird-stage.is-singing .bird,.bird-stage.is-singing .bird-wing,.bird-stage.is-singing .bird-beak-bottom,.bird-stage.is-singing .music-note{animation:none}.lyric-line>span,.lyric-line b span{transition:none}}
