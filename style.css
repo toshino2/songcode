@@ -31,8 +31,11 @@ p{font-size:17px;line-height:1.9;color:#5d7080}
 .lyric-line b{display:inline-flex}
 .lyric-line .active{color:#fff;background:#f48b78;transform:translateY(-2px) scale(1.08);box-shadow:0 5px 14px #f48b7840}
 .lyric-line .sung{color:#d36f60}
-.button{appearance:none;border:0;border-radius:999px;background:#17324d;color:#fff;padding:17px 28px;font-size:17px;font-weight:700;width:min(100%,360px);cursor:pointer}
-.button:disabled{opacity:.5}
+.controls{display:flex;justify-content:center;align-items:center;gap:10px}
+.button,.stop-button{appearance:none;border:0;border-radius:999px;padding:17px 22px;font-size:16px;font-weight:700;cursor:pointer}
+.button{background:#17324d;color:#fff;flex:1;max-width:300px}
+.stop-button{background:#f6e3df;color:#a5453c;min-width:104px}
+.button:disabled,.stop-button:disabled{opacity:.5;cursor:default}
 .status{min-height:24px;margin-top:18px;color:#526677}
 .error{color:#b64040}
 .privacy{margin-top:26px;font-size:12px;color:#84919c}
