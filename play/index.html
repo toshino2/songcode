@@ -4,24 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>SongCode 再生ツール</title>
-  <link rel="stylesheet" href="player.css">
-</head>
+  <link rel="stylesheet" href="player.css?v=20260908-engine2">
+<style>[hidden]{display:none!important}.hero{min-height:0;margin:20px auto}.hero h1{font-size:28px}.note-orbit{display:none}</style></head>
 <body>
   <main>
     <header><a class="brand" href="../"><span>♪</span>SongCode</a><p>再生ツール</p></header>
     <section class="hero"><div><span class="eyebrow">SONGCODE PLAYER</span><h1>歌の設計図を、<br>すぐに歌わせよう。</h1><p>SongCodeを入力すると、このブラウザだけで歌声として再生できます。</p></div><div class="note-orbit" aria-hidden="true">♫</div></section>
     <section class="player">
-      <div class="editor-head"><div><h2>SongCodeを入力</h2><p>SC2形式（例：<code>C4.1.あ</code>）に対応</p></div><button id="example" class="example">サンプルを入れる</button></div>
+      <div class="editor-head"><div><h2>SongCodeを入力</h2><p><code>C4:1:あ</code> の音符列・SC2・再生URLに対応</p></div><button id="example" class="example">サンプルを入れる</button></div>
       <textarea id="code" spellcheck="false" aria-label="SongCode入力欄"></textarea>
       <div class="actions"><button id="play" class="play">▶ 再生する</button><button id="make" class="create">▣ QRコードを作成</button></div>
       <div id="status" class="status" aria-live="polite"><span></span>SongCodeを貼り付けて、再生またはQRコード作成を選んでください。</div>
       <div id="songInfo" class="song-info" hidden><strong id="songTitle"></strong><span id="songBpm"></span><span id="songNotes"></span><span id="songDuration"></span></div>
       <div id="qrArea" class="qr-area" hidden><div><img id="qr" alt="SongCode再生用QRコード"><a id="download" download="songcode-qr.png">QRコードを画像で保存</a></div><p>スマホで読み取ると、この曲の再生ページが開きます。</p></div>
     </section>
-    <section class="guide"><h2>入力形式</h2><code>SC2｜曲名｜BPM｜音名.長さ.歌詞~音名.長さ.歌詞</code><p>例：<code>SC2|ちょうちょ|112|C4.1.ち~D4.1.ょ~E4.2.う</code></p></section>
+    <section class="guide"><h2>入力形式</h2><code>音名:長さ:歌詞 をカンマで区切ります。例：C4:1:ほ,D4:1:し</code><p>例：<code>SC2|ちょうちょ|112|C4.1.ち~D4.1.ょ~E4.2.う</code></p></section>
     <footer>SongCode Player　―　歌詞とメロディを、軽いコードとして届ける。</footer>
   </main>
   <script src="../create/vendor/qrcode.min.js"></script>
-  <script src="app.js"></script>
-</body>
+  <script src="app.js?v=20260908-engine2"></script>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('../sw.js').then(r=>r.update()).catch(()=>{});</script></body>
 </html>
